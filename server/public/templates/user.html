@@ -1,0 +1,28 @@
+<div class="col-md-12">
+    <div class="well col-md-7">
+        <form ng-submit="vm.addUser(vm.newUser)">
+            <label for="user">User: </label>
+            <input type="user" ng-model="vm.newUser.user" placeholder="User" /><br>
+            <label for="message">Message: </label>
+            <textarea class="form-control" ng-model="vm.newUser.message" rows="3"></textarea><br>
+            <button class="btn btn-primary" id="submitBtn">Submit</button>
+        </form>
+    </div>
+    <div class="col-md-12">
+        <div ng-repeat="users in vm.users" class="well col-md-3">
+          <p>
+            <strong>User: </strong>{{users.user}}</p>
+          <p>
+            <strong>Message: </strong>{{users.message}}</p>
+          <p>
+          <button ng-click="vm.deleteUser(users)" class="btn btn-danger pull-right">
+            <span class="glyphicon glyphicon-trash"></span>
+          </button>
+          <button ng-click="vm.open(users)" class="btn btn-primary pull-right">
+            <span class="glyphicon glyphicon-pencil"></span>
+          </button>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+</div>
